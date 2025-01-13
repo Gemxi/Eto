@@ -525,7 +525,7 @@ public class WebView2Handler : BaseHandler, WebView.IHandler
 
 	private void CoreWebView2_NewWindowRequested(object sender, CoreWebView2NewWindowRequestedEventArgs e)
 	{
-		var args = new WebViewNewWindowEventArgs(new Uri(e.Uri), null);
+		var args = new WebViewNewWindowEventArgs(new Uri(e.Uri), e.Name);
 		Callback.OnOpenNewWindow(Widget, args);
 		e.Handled = args.Cancel;
 	}
